@@ -500,6 +500,17 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		  .then(data => {
 			document.getElementById("nav-bar").innerHTML = data;
 		});
+
+		const path = window.location.pathname;
+  
+		// Select the logo image element
+		const logoImg = document.getElementById("logo-img");
+
+		// Check if we're on the /about page
+		if (path === "/about") {
+			// Update the logo image source
+			logoImg.src = "images/icons/kenara-stores-logo.png"; // Change to non-white logo
+		}
 	</script>
 
 <!--===============================================================================================-->	
