@@ -61,7 +61,7 @@
 		</div>
 
 		<!-- Header Mobile -->
-		<div id="nav-bar-mobile-contact"></div>
+		<div id="nav-bar-mobile"></div>
 
 		<!-- Modal Search -->
 		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
@@ -432,7 +432,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		fetch("./components/nav-bar-mobile.html")
 		  .then(response => response.text())
 		  .then(data => {
-			document.getElementById("nav-bar-mobile-contact").innerHTML = data;
+			document.getElementById("nav-bar-mobile").innerHTML = data;
 		});
 
 		fetch("./components/sidebar.html")
