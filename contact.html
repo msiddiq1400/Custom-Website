@@ -418,6 +418,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		</span>
 	</div>
 
+	<script src="./js/functions.js"></script>
+
 	<script>
 		fetch("./components/nav-bar.html")
 		  .then(response => response.text())
@@ -432,6 +434,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				// Update the logo image source
 				logoImg.src = "images/icons/kenara-stores-logo.png"; // Change to non-white logo
 			}
+			modifyIcons()
 		});
 
 		fetch("./components/nav-bar-mobile.html")
