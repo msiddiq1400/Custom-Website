@@ -1,23 +1,17 @@
 // Cart
-$(document).ready(function () {
-    $('.js-show-cart').on('click', function () {
-        $('.js-panel-cart').addClass('show-header-cart');
-    });
-    
-    $('.js-hide-cart').on('click', function () {
-        $('.js-panel-cart').removeClass('show-header-cart');
-    });
+$(document).on('click', '.js-show-cart', function () {
+    $('.js-panel-cart').addClass('show-header-cart');
+});
+$(document).on('click', '.js-hide-cart', function () {
+    $('.js-panel-cart').removeClass('show-header-cart');
 });
 
 // Side bar
-$(document).ready(function() {
-    $('.js-show-sidebar').on('click', function() {
-        $('.js-sidebar').addClass('show-sidebar');
-    });
-
-    $('.js-hide-sidebar').on('click', function() {
-        $('.js-sidebar').removeClass('show-sidebar');
-    });
+$(document).on('click', '.js-show-sidebar', function() {
+    $('.js-sidebar').addClass('show-sidebar');
+});
+$(document).on('click', '.js-hide-sidebar', function() {
+    $('.js-sidebar').removeClass('show-sidebar');
 });
 
 // Mobile Menu
@@ -28,7 +22,6 @@ $(document).ready(function() {
         $('.menu-mobile').slideToggle();
     });
 });
-
 $(window).resize(function() {
     // Only apply this logic if the window is 992px or wider
     if ($(window).width() >= 992) {
