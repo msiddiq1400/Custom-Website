@@ -561,7 +561,7 @@
 								<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
 
 								<div class="slick3 gallery-lb">
-									<div class="item-slick3 first-thumb" data-thumb="images/product-detail-01.jpg">
+									<div class="item-slick3" data-thumb="images/product-detail-01.jpg">
 										<div class="wrap-pic-w pos-relative">
 											<img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
 
@@ -716,9 +716,9 @@
 	});
   </script>
 
-  <script>
-	const products = [];
-	fetch('./data/products.json')
+  	<script>
+		const products = [];
+		fetch('./data/products.json')
         .then(response => response.json())
         .then(data => {
             products.push(...data)

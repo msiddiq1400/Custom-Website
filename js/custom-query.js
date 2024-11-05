@@ -48,7 +48,6 @@ function showModal(product) {
     $('.wrap-modal1 .wrap-pic-w a').attr('href', product.product_image);
     $('.wrap-modal1 .first-thumb').attr('data-thumb', product.product_image);
 
-    console.log(product)
     // Update name, price and desc
     $('.wrap-modal1 .js-name-detail').text(product.product_name);
     $('.wrap-modal1 .mtext-106').text(product.product_price);
@@ -71,7 +70,9 @@ function showModal(product) {
 
     const $slickGallery = $('.slick3');
     const productImages = product?.product_images || []
-    productImages.unshift(product.product_image);
+    if (!productImages.includes(product.product_image)) {
+        productImages.unshift(product.product_image);
+    }
 
     // Clear existing images
     $slickGallery.slick('slickRemove', null, null, true);
