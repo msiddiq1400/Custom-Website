@@ -68,6 +68,32 @@ function showModal(product) {
 
     // Show the modal
     $('.wrap-modal1').addClass('show-modal1');
+
+    const $slickGallery = $('.slick3');
+    const productImages = product?.product_images || []
+    productImages.unshift(product.product_image);
+
+    // Clear existing images
+    $slickGallery.slick('slickRemove', null, null, true);
+
+    // Add new images
+    productImages?.forEach(image => {
+
+        const newImage = `
+            <div class="item-slick3" data-thumb="${image}">
+                <div class="wrap-pic-w pos-relative">
+                    <img src="${image}" alt="IMG-PRODUCT">
+                    <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="${image}">
+                        <i class="fa fa-expand"></i>
+                    </a>
+                </div>
+            </div>
+        `;
+        $slickGallery.slick('slickAdd', newImage);
+    });
+
+    // Reinitialize or update current image
+    $slickGallery.slick('slickGoTo', 0);
 }
 
 // Event listener for "Quick View" button clicks
