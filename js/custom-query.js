@@ -46,6 +46,7 @@ function showModal(product) {
     // Update image
     $('.wrap-modal1 .wrap-pic-w img').attr('src', product.product_image);
     $('.wrap-modal1 .wrap-pic-w a').attr('href', product.product_image);
+    $('.wrap-modal1 .first-thumb').attr('data-thumb', product.product_image);
 
     console.log(product)
     // Update name, price and desc
