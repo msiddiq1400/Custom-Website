@@ -40,3 +40,44 @@ $(window).resize(function() {
         });
     }
 });
+
+// Function to populate and show the modal with product data
+function showModal(product) {
+    // Update image
+    $('.wrap-modal1 .wrap-pic-w img').attr('src', product.product_image);
+
+    // Update name, price
+    $('.wrap-modal1 .js-name-detail').text(product.product_name);
+    $('.wrap-modal1 .mtext-106').text(product.product_price);
+
+    // Update sizes
+    const sizeOptions = product.product_size
+        ? product.product_size.map(size => `<option>Size ${size}</option>`).join('')
+        : '<option>Not available</option>';
+    $('.wrap-modal1 select[name="size"]').html(sizeOptions);
+
+    // Update colors
+    const colorOptions = product.product_color
+        ? product.product_color.map(color => `<option>${color}</option>`).join('')
+        : '<option>Not available</option>';
+    $('.wrap-modal1 select[name="time"]').html(colorOptions);
+
+    // Show the modal
+    $('.wrap-modal1').addClass('show-modal1');
+}
+
+// Event listener for "Quick View" button clicks
+$(document).on('click', '.js-show-modal1', function(event) {
+    event.preventDefault();
+    // Get the index of the clicked product from a data attribute
+    const productIndex = $(this).data('index');
+    const product = products[productIndex];
+
+    // Call function to show modal with product data
+    showModal(product);
+});
+
+// Hide modal on close button click
+$('.js-hide-modal1').on('click', function() {
+    $('.wrap-modal1').removeClass('show-modal1');
+});
