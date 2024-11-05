@@ -46,9 +46,11 @@ function showModal(product) {
     // Update image
     $('.wrap-modal1 .wrap-pic-w img').attr('src', product.product_image);
 
-    // Update name, price
+    console.log(product)
+    // Update name, price and desc
     $('.wrap-modal1 .js-name-detail').text(product.product_name);
     $('.wrap-modal1 .mtext-106').text(product.product_price);
+    $('.wrap-modal1 .stext-102').text(product.product_desc || 'No description available.');
 
     // Update sizes
     const sizeOptions = product.product_size
