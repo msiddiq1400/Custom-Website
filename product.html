@@ -1122,44 +1122,34 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="./js/functions.js"></script>
 
 	<script>
-		fetch("./components/nav-bar.html")
-		  .then(response => response.text())
-		  .then(data => {
-			document.getElementById("nav-bar").innerHTML = data;
-		}).then(() => {
-			const path = window.location.pathname;
-			// Select the logo image element
-			const logoImg = document.getElementById("logo-img");
-			// Check if we're on the /about page
-			if (path.startsWith("/product")) {
-				// Update the logo image source
-				logoImg.src = "images/icons/kenara-stores-logo.png"; // Change to non-white logo
-			}
-			modifyIcons()
-		});
+		Promise.all([
+		  fetch("./components/nav-bar.html").then(response => response.text()),
+		  fetch("./components/nav-bar-mobile.html").then(response => response.text()),
+		  fetch("./components/sidebar.html").then(response => response.text()),
+		  fetch("./components/topbar.html").then(response => response.text()),
+		  fetch("./components/cart.html").then(response => response.text())
+		])
+		.then(([navBar, navBarMobile, sidebar, topBar, cart]) => {
+		  document.getElementById("nav-bar").innerHTML = navBar;
+		  document.getElementById("nav-bar-mobile").innerHTML = navBarMobile;
+		  document.getElementById("desktop-side-bar").innerHTML = sidebar;
+		  document.getElementById("top-bar").innerHTML = topBar;
+		  document.getElementById("users-cart").innerHTML = cart;
+		})
+		.then(() => {
+		  const path = window.location.pathname;
+		  const logoImg = document.getElementById("logo-img");
+	  
+		  // Change to non-white logo
+		  if (path.startsWith("/product")) {
+			logoImg.src = "images/icons/kenara-stores-logo.png"; 
+		  }
 
-		fetch("./components/nav-bar-mobile.html")
-		  .then(response => response.text())
-		  .then(data => {
-			document.getElementById("nav-bar-mobile").innerHTML = data;
-		});
-
-		fetch("./components/sidebar.html")
-		  .then(response => response.text())
-		  .then(data => {
-			document.getElementById("desktop-side-bar").innerHTML = data;
-		});
-
-		fetch("./components/topbar.html")
-		  .then(response => response.text())
-		  .then(data => {
-			document.getElementById("top-bar").innerHTML = data;
-		});
-
-		fetch("./components/cart.html")
-		  .then(response => response.text())
-		  .then(data => {
-			document.getElementById("users-cart").innerHTML = data;
+		  // Call the function after all elements are loaded
+		  modifyIcons(); 
+		})
+		.catch(error => {
+		  console.error("Error loading components:", error);
 		});
 	</script>
 	
