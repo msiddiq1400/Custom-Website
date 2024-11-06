@@ -100,14 +100,24 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 html, body {
   height: 100%;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer {
-  position: sticky;
-  top: 100vh; /* Push it to the bottom initially */
-  margin-top: auto; /* Ensures footer stays at the bottom if content is short */
+  padding: 20px 0;
+  width: 100%;
 }
 
+.content11 {
+  flex: 1;
+}
+
+.wrapper11 {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
 
 /*//////////////////////////////////////////////////////////////////
 [ RS PLUGIN ]*/
