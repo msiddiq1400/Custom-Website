@@ -466,6 +466,13 @@
 		  // Call the function after all elements are loaded
 		  modifyIcons(); 
 		})
+		.then(() => {
+			fetch("./components/footer.html")
+			.then(response => response.text())
+			.then(siteFooter => {
+				document.getElementById("site-footer").innerHTML = siteFooter;
+			})
+		})
 		.catch(error => {
 		  console.error("Error loading components:", error);
 		});
@@ -560,13 +567,6 @@
 	</script>
 	<script src="js/main.js"></script>
 	<script src="./js/custom-query.js"></script>
-	<script>
-		fetch("./components/footer.html")
-		.then(response => response.text())
-		.then(siteFooter => {
-			document.getElementById("site-footer").innerHTML = siteFooter;
-		})
-	</script>
 <!--===============================================================================================-->
 
 </body>

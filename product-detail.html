@@ -582,6 +582,13 @@
 				$(".slick2").append(productHTML);
 			});
 		})
+		.then(() => {
+			fetch("./components/footer.html")
+			.then(response => response.text())
+			.then(siteFooter => {
+				document.getElementById("site-footer").innerHTML = siteFooter;
+			})
+		})
 		.catch(error => console.error('Error fetching products:', error));
 	</script>
 	<script>
@@ -770,13 +777,6 @@
 			})
 			.catch(error => console.error('Error loading product data:', error));
 		}
-	</script>
-	<script>
-		fetch("./components/footer.html")
-		.then(response => response.text())
-		.then(siteFooter => {
-			document.getElementById("site-footer").innerHTML = siteFooter;
-		})
 	</script>
 <!--===============================================================================================-->
 
