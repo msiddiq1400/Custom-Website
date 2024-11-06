@@ -97,6 +97,17 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   src: url('../fonts/Montserrat/Montserrat-Bold.ttf'); 
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.footer {
+  position: sticky;
+  top: 100vh; /* Push it to the bottom initially */
+  margin-top: auto; /* Ensures footer stays at the bottom if content is short */
+}
+
 
 /*//////////////////////////////////////////////////////////////////
 [ RS PLUGIN ]*/
