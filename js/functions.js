@@ -38,7 +38,6 @@ function loadCart() {
 }
 
 function modifyIcons() {
-    console.log('called');
     // desktop-menu-icon
     const menuIcon = document.getElementById("menu-icon");
     const cartIcon = document.getElementById("menu-cart");

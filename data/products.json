@@ -1,24 +1,29 @@
 [
     {
         "product_image": "images/product-01.jpg",
+        "product_url": "1",
         "product_name": "Esprit Ruffle Shirt",
         "product_price": "$16.64",
         "product_size": ["S", "M", "L", "XL"],
         "product_tag": "women",
-        "product_color": ["Red", "Navy Blue", "Black", "Grey"],
+        "product_color": ["Red", "Navy Blue", "Black", "Grey", "Purple"],
         "product_images": ["images/product-02.jpg"],
+        "product_show_related": true,
         "product_desc": "This women’s shirt combines elegance with everyday comfort. Crafted from soft, breathable fabric, it offers a relaxed yet flattering fit that complements any silhouette. With delicate stitching and a timeless cut, this versatile piece can be dressed up or down—perfect for work, weekends, or special occasions. Available in a range of colors, it’s a wardrobe essential that embodies style and simplicity."
     },
     {
         "product_image": "images/product-02.jpg",
+        "product_url": "2",
         "product_name": "Herschel supply",
         "product_price": "$35.31",
         "product_size": ["S", "M", "L", "XL"],
         "product_tag": "women",
+        "product_show_related": true,
         "product_color": ["Red", "Navy Blue", "Black", "Grey"]
     },
     {
         "product_image": "images/product-03.jpg",
+        "product_url": "3",
         "product_name": "Only Check Trouser",
         "product_price": "$25.50",
         "product_size": ["S", "M", "L", "XL"],
@@ -27,14 +32,17 @@
     },
     {
         "product_image": "images/product-04.jpg",
+        "product_url": "4",
         "product_name": "Classic Trench Coat",
         "product_price": "$75.00",
         "product_size": ["S", "M", "L", "XL"],
         "product_tag": "women",
+        "product_show_related": true,
         "product_color": ["Red", "Navy Blue", "Black", "Grey"]
     },
     {
         "product_image": "images/product-05.jpg",
+        "product_url": "5",
         "product_name": "Front Pocket Jumper",
         "product_price": "$34.75",
         "product_size": ["S", "M", "L", "XL"],
@@ -43,14 +51,17 @@
     },
     {
         "product_image": "images/product-06.jpg",
+        "product_url": "6",
         "product_name": "Vintage Inspired Classic",
         "product_price": "$93.20",
         "product_size": ["S", "M", "L", "XL"],
         "product_tag": "watches",
+        "product_show_related": true,
         "product_color": ["Red", "Navy Blue", "Black", "Grey"]
     },
     {
         "product_image": "images/product-07.jpg",
+        "product_url": "7",
         "product_name": "Shirt in Stretch Cotton",
         "product_price": "$52.66",
         "product_size": ["S", "M", "L", "XL"],
@@ -59,14 +70,17 @@
     },
     {
         "product_image": "images/product-08.jpg",
+        "product_url": "8",
         "product_name": "Pieces Metallic Printed",
         "product_price": "$18.96",
         "product_size": ["S", "M", "L", "XL"],
         "product_tag": "women",
+        "product_show_related": true,
         "product_color": ["Red", "Navy Blue", "Black", "Grey"]
     },
     {
         "product_image": "images/product-09.jpg",
+        "product_url": "9",
         "product_name": "Converse All Star Hi Plimsolls",
         "product_price": "$75.00",
         "product_size": ["S", "M", "L", "XL"],
@@ -75,6 +89,7 @@
     },
     {
         "product_image": "images/product-10.jpg",
+        "product_url": "10",
         "product_name": "Femme T-Shirt In Stripe",
         "product_price": "$25.85",
         "product_size": ["S", "M", "L", "XL"],
@@ -83,6 +98,7 @@
     },
     {
         "product_image": "images/product-11.jpg",
+        "product_url": "11",
         "product_name": "Herschel supply",
         "product_price": "$63.16",
         "product_size": ["S", "M", "L", "XL"],
@@ -91,6 +107,7 @@
     },
     {
         "product_image": "images/product-12.jpg",
+        "product_url": "12",
         "product_name": "Herschel supply",
         "product_price": "$63.15",
         "product_size": ["S", "M", "L", "XL"],
@@ -99,6 +116,7 @@
     },
     {
         "product_image": "images/product-13.jpg",
+        "product_url": "13",
         "product_name": "T-Shirt with Sleeve",
         "product_price": "$18.49",
         "product_size": ["S", "M", "L", "XL"],
@@ -107,6 +125,7 @@
     },
     {
         "product_image": "images/product-14.jpg",
+        "product_url": "14",
         "product_name": "Pretty Little Thing",
         "product_price": "$54.79",
         "product_size": ["S", "M", "L", "XL"],
@@ -115,6 +134,7 @@
     },
     {
         "product_image": "images/product-15.jpg",
+        "product_url": "15",
         "product_name": "Mini Silver Mesh Watch 2",
         "product_price": "$86.85",
         "product_size": ["S", "M", "L", "XL"],
@@ -123,6 +143,7 @@
     },
     {
         "product_image": "images/product-16.jpg",
+        "product_url": "16",
         "product_name": "Square Neck Back",
         "product_price": "$29.64",
         "product_size": ["S", "M", "L", "XL"],

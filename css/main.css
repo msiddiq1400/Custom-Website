@@ -1502,6 +1502,86 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   border-color: #ccc;
 }
 
+/*//////////////////////////////////////////////////////////////////
+[ Slick4 ]*/
+.wrap-slick4 {
+  position: relative;
+}
+
+/*---------------------------------------------*/
+.wrap-slick4-arrows {
+  position: absolute;
+  z-index: 100;
+  width: 83.333333%;
+  right: 0;
+  top: calc(50% - 20px);
+}
+
+.arrow-slick4 {
+  font-size: 25px;
+  color: #fff;
+  
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0,0,0,0.5);
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.arrow-slick4:hover {
+  background-color: rgba(0,0,0,0.9);
+}
+
+.prev-slick4 {left: 0px;}
+.next-slick4 {right: 0px;}
+
+/*---------------------------------------------*/
+.wrap-slick4-dots {
+  width: 11.111111%;
+}
+
+.slick4 {
+  width: 83.333333%;
+}
+
+.slick4-dots li {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin-bottom: 27px;
+}
+
+.slick4-dots li img {
+  width: 100%;
+}
+
+.slick4-dot-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  border: 2px solid transparent;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.slick4-dot-overlay:hover {
+  border-color: #ccc;
+}
+
+.slick4-dots .slick-active .slick4-dot-overlay {
+  border-color: #ccc;
+}
+
 
 
 /*//////////////////////////////////////////////////////////////////
@@ -2146,6 +2226,12 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .stext-102 {
+  font-family: Poppins-Regular;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.spp-desc {
   font-family: Poppins-Regular;
   font-size: 14px;
   line-height: 1.7;
