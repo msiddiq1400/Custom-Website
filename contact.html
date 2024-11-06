@@ -169,16 +169,14 @@
 		  fetch("./components/nav-bar-mobile.html").then(response => response.text()),
 		  fetch("./components/sidebar.html").then(response => response.text()),
 		  fetch("./components/topbar.html").then(response => response.text()),
-		  fetch("./components/cart.html").then(response => response.text()),
-		  fetch("./components/footer.html").then(response => response.text())
+		  fetch("./components/cart.html").then(response => response.text())
 		])
-		.then(([navBar, navBarMobile, sidebar, topBar, cart, siteFooter]) => {
+		.then(([navBar, navBarMobile, sidebar, topBar, cart]) => {
 		  document.getElementById("nav-bar").innerHTML = navBar;
 		  document.getElementById("nav-bar-mobile").innerHTML = navBarMobile;
 		  document.getElementById("desktop-side-bar").innerHTML = sidebar;
 		  document.getElementById("top-bar").innerHTML = topBar;
 		  document.getElementById("users-cart").innerHTML = cart;
-		  document.getElementById("site-footer").innerHTML = siteFooter;
 		})
 		.then(() => {
 		  const path = window.location.pathname;
@@ -283,11 +281,17 @@
 			})
 		});
 	</script>
-	
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
 	<script src="js/map-custom.js"></script>
 	<script src="js/main.js"></script>
 	<script src="./js/custom-query.js"></script>
+	<script>
+		fetch("./components/footer.html")
+		.then(response => response.text())
+		.then(siteFooter => {
+			document.getElementById("site-footer").innerHTML = siteFooter;
+		})
+	</script>
 <!--===============================================================================================-->
 </body>
 </html>

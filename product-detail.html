@@ -584,6 +584,37 @@
 		})
 		.catch(error => console.error('Error fetching products:', error));
 	</script>
+	<script>
+		Promise.all([
+		  fetch("./components/nav-bar.html").then(response => response.text()),
+		  fetch("./components/nav-bar-mobile.html").then(response => response.text()),
+		  fetch("./components/sidebar.html").then(response => response.text()),
+		  fetch("./components/topbar.html").then(response => response.text()),
+		  fetch("./components/cart.html").then(response => response.text())
+		])
+		.then(([navBar, navBarMobile, sidebar, topBar, cart]) => {
+		  document.getElementById("nav-bar").innerHTML = navBar;
+		  document.getElementById("nav-bar-mobile").innerHTML = navBarMobile;
+		  document.getElementById("desktop-side-bar").innerHTML = sidebar;
+		  document.getElementById("top-bar").innerHTML = topBar;
+		  document.getElementById("users-cart").innerHTML = cart;
+		})
+		.then(() => {
+		  const path = window.location.pathname;
+		  const logoImg = document.getElementById("logo-img");
+	  
+		  // Change to non-white logo
+		  if (path.startsWith("/product-detail")) {
+			logoImg.src = "images/icons/kenara-stores-logo.png"; 
+		  }
+
+		  // Call the function after all elements are loaded
+		  modifyIcons(); 
+		})
+		.catch(error => {
+		  console.error("Error loading components:", error);
+		});
+	</script>
 	<script src="./js/functions.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="vendor/animsition/js/animsition.min.js"></script>
@@ -675,39 +706,6 @@
 	<script src="js/main.js"></script>
 	<script src="./js/custom-query.js"></script>
 	<script>
-		Promise.all([
-		  fetch("./components/nav-bar.html").then(response => response.text()),
-		  fetch("./components/nav-bar-mobile.html").then(response => response.text()),
-		  fetch("./components/sidebar.html").then(response => response.text()),
-		  fetch("./components/topbar.html").then(response => response.text()),
-		  fetch("./components/cart.html").then(response => response.text()),
-		  fetch("./components/footer.html").then(response => response.text())
-		])
-		.then(([navBar, navBarMobile, sidebar, topBar, cart, siteFooter]) => {
-		  document.getElementById("nav-bar").innerHTML = navBar;
-		  document.getElementById("nav-bar-mobile").innerHTML = navBarMobile;
-		  document.getElementById("desktop-side-bar").innerHTML = sidebar;
-		  document.getElementById("top-bar").innerHTML = topBar;
-		  document.getElementById("users-cart").innerHTML = cart;
-		  document.getElementById("site-footer").innerHTML = siteFooter;
-		})
-		.then(() => {
-		  const path = window.location.pathname;
-		  const logoImg = document.getElementById("logo-img");
-	  
-		  // Change to non-white logo
-		  if (path.startsWith("/product-detail")) {
-			logoImg.src = "images/icons/kenara-stores-logo.png"; 
-		  }
-
-		  // Call the function after all elements are loaded
-		  modifyIcons(); 
-		})
-		.catch(error => {
-		  console.error("Error loading components:", error);
-		});
-	</script>
-	<script>
 		const urlParams = new URLSearchParams(window.location.search);
 		const productId = urlParams.get('id');
 		if (productId) {
@@ -772,6 +770,13 @@
 			})
 			.catch(error => console.error('Error loading product data:', error));
 		}
+	</script>
+	<script>
+		fetch("./components/footer.html")
+		.then(response => response.text())
+		.then(siteFooter => {
+			document.getElementById("site-footer").innerHTML = siteFooter;
+		})
 	</script>
 <!--===============================================================================================-->
 
