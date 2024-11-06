@@ -4,6 +4,7 @@
         "product_name": "Esprit Ruffle Shirt",
         "product_price": "$16.64",
         "product_size": ["S", "M", "L", "XL"],
+        "product_tag": "women",
         "product_color": ["Red", "Navy Blue", "Black", "Grey"],
         "product_images": ["images/product-02.jpg"],
         "product_desc": "This women’s shirt combines elegance with everyday comfort. Crafted from soft, breathable fabric, it offers a relaxed yet flattering fit that complements any silhouette. With delicate stitching and a timeless cut, this versatile piece can be dressed up or down—perfect for work, weekends, or special occasions. Available in a range of colors, it’s a wardrobe essential that embodies style and simplicity."
@@ -13,6 +14,7 @@
         "product_name": "Herschel supply",
         "product_price": "$35.31",
         "product_size": ["S", "M", "L", "XL"],
+        "product_tag": "women",
         "product_color": ["Red", "Navy Blue", "Black", "Grey"]
     },
     {
@@ -20,6 +22,7 @@
         "product_name": "Only Check Trouser",
         "product_price": "$25.50",
         "product_size": ["S", "M", "L", "XL"],
+        "product_tag": "men",
         "product_color": ["Red", "Navy Blue", "Black", "Grey"]
     },
     {
@@ -27,6 +30,7 @@
         "product_name": "Classic Trench Coat",
         "product_price": "$75.00",
         "product_size": ["S", "M", "L", "XL"],
+        "product_tag": "women",
         "product_color": ["Red", "Navy Blue", "Black", "Grey"]
     },
     {
@@ -34,6 +38,7 @@
         "product_name": "Front Pocket Jumper",
         "product_price": "$34.75",
         "product_size": ["S", "M", "L", "XL"],
+        "product_tag": "women",
         "product_color": ["Red", "Navy Blue", "Black", "Grey"]
     },
     {
@@ -41,6 +46,7 @@
         "product_name": "Vintage Inspired Classic",
         "product_price": "$93.20",
         "product_size": ["S", "M", "L", "XL"],
+        "product_tag": "watches",
         "product_color": ["Red", "Navy Blue", "Black", "Grey"]
     },
     {
@@ -48,6 +54,7 @@
         "product_name": "Shirt in Stretch Cotton",
         "product_price": "$52.66",
         "product_size": ["S", "M", "L", "XL"],
+        "product_tag": "women",
         "product_color": ["Red", "Navy Blue", "Black", "Grey"]
     },
     {
@@ -55,6 +62,7 @@
         "product_name": "Pieces Metallic Printed",
         "product_price": "$18.96",
         "product_size": ["S", "M", "L", "XL"],
+        "product_tag": "women",
         "product_color": ["Red", "Navy Blue", "Black", "Grey"]
     },
     {
@@ -62,6 +70,7 @@
         "product_name": "Converse All Star Hi Plimsolls",
         "product_price": "$75.00",
         "product_size": ["S", "M", "L", "XL"],
+        "product_tag": "shoes",
         "product_color": ["Red", "Navy Blue", "Black", "Grey"]
     },
     {
@@ -69,6 +78,7 @@
         "product_name": "Femme T-Shirt In Stripe",
         "product_price": "$25.85",
         "product_size": ["S", "M", "L", "XL"],
+        "product_tag": "women",
         "product_color": ["Red", "Navy Blue", "Black", "Grey"]
     },
     {
@@ -76,6 +86,7 @@
         "product_name": "Herschel supply",
         "product_price": "$63.16",
         "product_size": ["S", "M", "L", "XL"],
+        "product_tag": "men",
         "product_color": ["Red", "Navy Blue", "Black", "Grey"]
     },
     {
@@ -83,6 +94,7 @@
         "product_name": "Herschel supply",
         "product_price": "$63.15",
         "product_size": ["S", "M", "L", "XL"],
+        "product_tag": "men",
         "product_color": ["Red", "Navy Blue", "Black", "Grey"]
     },
     {
@@ -90,6 +102,7 @@
         "product_name": "T-Shirt with Sleeve",
         "product_price": "$18.49",
         "product_size": ["S", "M", "L", "XL"],
+        "product_tag": "women",
         "product_color": ["Red", "Navy Blue", "Black", "Grey"]
     },
     {
@@ -97,6 +110,7 @@
         "product_name": "Pretty Little Thing",
         "product_price": "$54.79",
         "product_size": ["S", "M", "L", "XL"],
+        "product_tag": "women",
         "product_color": ["Red", "Navy Blue", "Black", "Grey"]
     },
     {
@@ -104,6 +118,15 @@
         "product_name": "Mini Silver Mesh Watch 2",
         "product_price": "$86.85",
         "product_size": ["S", "M", "L", "XL"],
+        "product_tag": "watches",
+        "product_color": ["Red", "Navy Blue", "Black", "Grey"]
+    },
+    {
+        "product_image": "images/product-16.jpg",
+        "product_name": "Square Neck Back",
+        "product_price": "$29.64",
+        "product_size": ["S", "M", "L", "XL"],
+        "product_tag": "women",
         "product_color": ["Red", "Navy Blue", "Black", "Grey"]
     }
 ]
