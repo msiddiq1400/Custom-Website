@@ -97,27 +97,6 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   src: url('../fonts/Montserrat/Montserrat-Bold.ttf'); 
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.footer {
-  padding: 20px 0;
-  width: 100%;
-}
-
-.content11 {
-  flex: 1;
-}
-
-.wrapper11 {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Full viewport height */
-}
 
 /*//////////////////////////////////////////////////////////////////
 [ RS PLUGIN ]*/
@@ -133,9 +112,6 @@ html, body {
 /*------------------------------------------------------------------
 [ Slick2 ]*/
 .slick-slide {outline: none !important;}
-
-
-
 
 
 /*//////////////////////////////////////////////////////////////////
