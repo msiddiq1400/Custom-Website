@@ -1983,9 +1983,6 @@
         _.$slideTrack.append(_.$slides);
 
         _.$slidesCache = _.$slides;
-
-        _.reinit();
-
     };
 
     Slick.prototype.setCSS = function(position) {

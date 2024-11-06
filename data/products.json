@@ -5,6 +5,7 @@
         "product_price": "$16.64",
         "product_size": ["S", "M", "L", "XL"],
         "product_color": ["Red", "Navy Blue", "Black", "Grey"],
+        "product_images": ["images/product-02.jpg"],
         "product_desc": "This women’s shirt combines elegance with everyday comfort. Crafted from soft, breathable fabric, it offers a relaxed yet flattering fit that complements any silhouette. With delicate stitching and a timeless cut, this versatile piece can be dressed up or down—perfect for work, weekends, or special occasions. Available in a range of colors, it’s a wardrobe essential that embodies style and simplicity."
     },
     {
