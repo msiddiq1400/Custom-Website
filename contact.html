@@ -164,6 +164,11 @@
 <!--===============================================================================================-->
 	<script src="./js/functions.js"></script>
 	<script>
+		fetch("./components/footer.html")
+		.then(response => response.text())
+		.then(siteFooter => {
+			document.getElementById("site-footer").innerHTML = siteFooter;
+		})
 		Promise.all([
 		  fetch("./components/nav-bar.html").then(response => response.text()),
 		  fetch("./components/nav-bar-mobile.html").then(response => response.text()),
@@ -189,13 +194,6 @@
 
 		  // Call the function after all elements are loaded
 		  modifyIcons(); 
-		})
-		.then(() => {
-			fetch("./components/footer.html")
-			.then(response => response.text())
-			.then(siteFooter => {
-				document.getElementById("site-footer").innerHTML = siteFooter;
-			})
 		})
 		.catch(error => {
 		  console.error("Error loading components:", error);

@@ -251,6 +251,11 @@
 		});
 	</script>
 	<script>
+		fetch("./components/footer.html")
+		.then(response => response.text())
+		.then(siteFooter => {
+			document.getElementById("site-footer").innerHTML = siteFooter;
+		})
 		const products = [];
 		fetch('./data/products.json')
 		.then(response => response.json())
@@ -290,13 +295,6 @@
 				`;
 				$(".isotope-grid").append(productHTML);
 			});
-		})
-		.then(() => {
-			fetch("./components/footer.html")
-			.then(response => response.text())
-			.then(siteFooter => {
-				document.getElementById("site-footer").innerHTML = siteFooter;
-			})
 		})
 		.catch(error => console.error('Error fetching products:', error));
   	</script>
