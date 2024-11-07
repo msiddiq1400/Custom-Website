@@ -536,6 +536,7 @@
 
 <!--===============================================================================================-->
 	<script>
+		let products = []
 		Promise.all([
 			fetch("./components/nav-bar.html").then(response => response.text()),
 			fetch("./components/nav-bar-mobile.html").then(response => response.text()),
@@ -545,7 +546,7 @@
 			fetch("./components/footer.html").then(response => response.text()),
 			fetch('./data/products.json').then(response => response.json()) // Fetch the product data as part of the promise chain
 		])
-		.then(([navBar, navBarMobile, sidebar, topBar, cart, siteFooter, products]) => {
+		.then(([navBar, navBarMobile, sidebar, topBar, cart, siteFooter, myProducts]) => {
 			// Insert HTML components into the page
 			document.getElementById("nav-bar").innerHTML = navBar;
 			document.getElementById("nav-bar-mobile").innerHTML = navBarMobile;
@@ -553,6 +554,7 @@
 			document.getElementById("top-bar").innerHTML = topBar;
 			document.getElementById("users-cart").innerHTML = cart;
 			document.getElementById("site-footer").innerHTML = siteFooter;
+			products = myProducts
 
 			// Filter products to only include those that should be shown as related
 			const filteredProducts = products.filter(product => product?.product_show_related === true);
