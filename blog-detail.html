@@ -434,30 +434,26 @@
 	</div>
 
 	<!-- Footer -->
-	<!-- <div id="site-footer"></div> -->
+	<div id="site-footer"></div>
 
 <!--===============================================================================================-->
 	<script src="./js/functions.js"></script>
-
 	<script>
-		fetch("./components/footer.html")
-		.then(response => response.text())
-		.then(siteFooter => {
-			document.getElementById("site-footer").innerHTML = siteFooter;
-		})
 		Promise.all([
 		  fetch("./components/nav-bar.html").then(response => response.text()),
 		  fetch("./components/nav-bar-mobile.html").then(response => response.text()),
 		  fetch("./components/sidebar.html").then(response => response.text()),
 		  fetch("./components/topbar.html").then(response => response.text()),
-		  fetch("./components/cart.html").then(response => response.text())
+		  fetch("./components/cart.html").then(response => response.text()),
+		  fetch("./components/footer.html").then(response => response.text())
 		])
-		.then(([navBar, navBarMobile, sidebar, topBar, cart]) => {
+		.then(([navBar, navBarMobile, sidebar, topBar, cart, siteFooter]) => {
 		  document.getElementById("nav-bar").innerHTML = navBar;
 		  document.getElementById("nav-bar-mobile").innerHTML = navBarMobile;
 		  document.getElementById("desktop-side-bar").innerHTML = sidebar;
 		  document.getElementById("top-bar").innerHTML = topBar;
 		  document.getElementById("users-cart").innerHTML = cart;
+		  document.getElementById("site-footer").innerHTML = siteFooter;
 		})
 		.then(() => {
 		  const path = window.location.pathname;
@@ -475,7 +471,6 @@
 		  console.error("Error loading components:", error);
 		});
 	</script>
-
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 	<script src="vendor/bootstrap/js/popper.js"></script>

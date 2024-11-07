@@ -532,46 +532,51 @@
 		</div>
 	</div>
 	<!-- Footer -->
-	<!-- <div id="site-footer"></div> -->
+	<div id="site-footer"></div>
 
 <!--===============================================================================================-->
 	<script>
-		fetch("./components/footer.html")
-		.then(response => response.text())
-		.then(siteFooter => {
+		Promise.all([
+			fetch("./components/nav-bar.html").then(response => response.text()),
+			fetch("./components/nav-bar-mobile.html").then(response => response.text()),
+			fetch("./components/sidebar.html").then(response => response.text()),
+			fetch("./components/topbar.html").then(response => response.text()),
+			fetch("./components/cart.html").then(response => response.text()),
+			fetch("./components/footer.html").then(response => response.text()),
+			fetch('./data/products.json').then(response => response.json()) // Fetch the product data as part of the promise chain
+		])
+		.then(([navBar, navBarMobile, sidebar, topBar, cart, siteFooter, products]) => {
+			// Insert HTML components into the page
+			document.getElementById("nav-bar").innerHTML = navBar;
+			document.getElementById("nav-bar-mobile").innerHTML = navBarMobile;
+			document.getElementById("desktop-side-bar").innerHTML = sidebar;
+			document.getElementById("top-bar").innerHTML = topBar;
+			document.getElementById("users-cart").innerHTML = cart;
 			document.getElementById("site-footer").innerHTML = siteFooter;
-		})
-		const products = [];
-		fetch('./data/products.json')
-		.then(response => response.json())
-		.then(data => {
-			products.push(...data.filter(ele => ele?.product_show_related === true))
-		})
-		.then(() => {
-			$.each(products, function(index, product) {
+
+			// Filter products to only include those that should be shown as related
+			const filteredProducts = products.filter(product => product?.product_show_related === true);
+
+			// Append filtered products to the custom1 section
+			$.each(filteredProducts, function(index, product) {
 				const productHTML = `
 					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
-						<!-- Block2 -->
 						<div class="block2">
 							<div class="block2-pic hov-img0">
 								<img src="${product.product_image}" alt="IMG-PRODUCT">
-
 								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1" data-index="${index}">
 									Quick View
 								</a>
 							</div>
-
 							<div class="block2-txt flex-w flex-t p-t-14">
-								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.html?id=${product.product_url}" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<div class="block2-txt-child1 flex-col-l">
+									<a href="product-detail.html?id=${product.product_url}" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" data-index="${index}">
 										${product.product_name}
 									</a>
-
 									<span class="stext-105 cl3">
 										${product.product_price}
 									</span>
 								</div>
-
 								<div class="block2-txt-child2 flex-r p-t-3">
 									<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
 										<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
@@ -584,40 +589,22 @@
 				`;
 				$(".custom1").append(productHTML);
 			});
-		})
-		.catch(error => console.error('Error fetching products:', error));
-	</script>
-	<script>
-		Promise.all([
-		  fetch("./components/nav-bar.html").then(response => response.text()),
-		  fetch("./components/nav-bar-mobile.html").then(response => response.text()),
-		  fetch("./components/sidebar.html").then(response => response.text()),
-		  fetch("./components/topbar.html").then(response => response.text()),
-		  fetch("./components/cart.html").then(response => response.text())
-		])
-		.then(([navBar, navBarMobile, sidebar, topBar, cart]) => {
-		  document.getElementById("nav-bar").innerHTML = navBar;
-		  document.getElementById("nav-bar-mobile").innerHTML = navBarMobile;
-		  document.getElementById("desktop-side-bar").innerHTML = sidebar;
-		  document.getElementById("top-bar").innerHTML = topBar;
-		  document.getElementById("users-cart").innerHTML = cart;
-		})
-		.then(() => {
-		  const path = window.location.pathname;
-		  const logoImg = document.getElementById("logo-img");
-	  
-		  // Change to non-white logo
-		  if (path.startsWith("/product-detail")) {
-			logoImg.src = "images/icons/kenara-stores-logo.png"; 
-		  }
 
-		  // Call the function after all elements are loaded
-		  modifyIcons(); 
+			// Change logo based on the current page path
+			const path = window.location.pathname;
+			const logoImg = document.getElementById("logo-img");
+			if (path.startsWith("/product-detail")) {
+				logoImg.src = "images/icons/kenara-stores-logo.png"; 
+			}
+
+			// Modify icons after elements are loaded
+			modifyIcons();
 		})
 		.catch(error => {
-		  console.error("Error loading components:", error);
+			console.error("Error loading components or fetching products:", error);
 		});
 	</script>
+
 	<script src="./js/functions.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="vendor/animsition/js/animsition.min.js"></script>
